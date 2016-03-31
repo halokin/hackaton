@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="" />
+    <title>Sample</title>
+
+    <!-- AngularJS  Jquery-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,600,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-profile.css">
+
+
+    <!-- AngularJS -->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/libs/pace.js"></script>
+
+    <!-- AngularJS Controllers-->
+    <script src="js/controllers/trekController.js"></script>
+    <script src="js/controllers/bikeController.js"></script>
+    <script src="js/controllers/myprofileController.js"></script>
+
+    <!-- AngularJS  Service-->
+    <script src="js/services/myprofileService.js"></script>
+    <script src="js/services/bikeService.js"></script>
+    <script src="js/services/trekService.js"></script>
+
+
+    <script src="js/app.js"></script>
+    </head>
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-border" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#/"><img src="https://unhosted.org/slides/img/js.png" width="50px"></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: activetab=='/my-profile'}"><a href="#/my-profile">My Profile</a></li>
+                <li ng-class="{active: activetab=='/trek'}"><a href="#/trek">Trek</a></li>
+                <li ng-class="{active: activetab=='/bike'}"><a href="#/bike">Bike</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>
