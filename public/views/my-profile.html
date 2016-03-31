@@ -329,6 +329,7 @@
       </div>
     </div>
 
+
     <div class="well">
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
@@ -362,25 +363,62 @@
     </div>
 
   </div>
+  <!--profile. ------------------------------------------------------------------------------------------------------------------------------------------>
+  <!--profile. ------------------------------------------------------------------------------------------------------------------------------------------>
+  <div class="row">
+  </div>
 
   <div class="row">
 
+
+    <div class="col-md-6">
+      <input type="text" name="name" value="" ng-model="city">
+      <input type='button' class='btn btn-success ' name='first' value='update' ng-click="search()" />
+
+
+      <ng-map zoom="11" center="41.875696,-87.624207">
+        <kml-layer url="http://www.google.com/maps/d/kml?mid=z4t2qn7YIVEQ.kA0ng124KU8Q">
+        </kml-layer>
+        <bicycling-layer></bicycling-layer>
+
+      </ng-map>
+    </div>
+
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div class="panel panel-default weather-panel">
+        <div class="panel-heading">Current weather in {{meteo.name}}<br><small id="currentTime" class="supersmall"></small></div>
+        <div class="row">
+          <div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png" alt="" /></div>
+          <div class="col-sm-6" style="padding: 0px;">
+            <h1 class="temp"><span id="currentTemperature">{{meteo.main.temp}}</span><span>°</span></h1>
+            <p>
+              <small id="currentSummary">{{meteo.weather[0].main}}</small>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12"><strong>{{meteo.weather[0].description}}</strong><br>
+            <span>wind: </span><span id="currentWind">{{meteo.wind.speed}}</span><span> mph(s)</span><br>
+            <span id="hourlySummary"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
-  <div class="col-md-6">
-    <input type="text" name="name" value="" ng-model="city">
-    <input type='button' class='btn btn-success ' name='first' value='update' ng-click="search()" />
-    <img ng-src="'http://openweathermap.org/img/w/' + {{meteo[0]['icon']}} + '.png'" alt="" />
-    <p>
 
-      Météo de {{meteo.name}}
-    </p>
-<ng-map center="41,-87" zoom="3"></ng-map>
-  </div>
 
-  </div>
+
+  <!--profile. ------------------------------------------------------------------------------------------------------------------------------------------>
+  <!--profile. ------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
 
 
+
+
+</div>
 </div>

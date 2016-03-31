@@ -1,5 +1,5 @@
 // MAIN CONTROLLER
-function myprofileController($scope, $http, myprofileService, $location, meteoService, ngMap) {
+function myprofileController($scope, $http, myprofileService, $location, meteoService, NgMap) {
 
   $scope.i = 0;
   $scope.u = 0;
@@ -73,7 +73,7 @@ function myprofileController($scope, $http, myprofileService, $location, meteoSe
     }
   };
 
-  // $scope.search = function($http){
+  // $scope.search = function(){
   // 	$http.get("api.openweathermap.org/data/2.5/weather?q="+$scope.city+"&APPID="+"295594b2f0f74cb1eafdf26d818de19b"+"&units=metric")
   // 	.success(function(res) {
   // 							$scope.meteo = res.data;
@@ -82,9 +82,9 @@ function myprofileController($scope, $http, myprofileService, $location, meteoSe
   //
   // };
   $scope.search = function (){
-    
     meteoService.get($scope.city).then(function(res){
       $scope.meteo = res.data;
+      console.log ($scope.meteo);
     });
   };
 
