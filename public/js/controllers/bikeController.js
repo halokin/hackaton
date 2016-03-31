@@ -15,12 +15,12 @@ function mainController($scope, $http, bikeService) {
 		});
 		$scope.description = "";
 	}
-	$scope.update = function(todo){
+	$scope.update = function(bike){
 		bikeService.update(todo._id, bike).then(function(res){
 			load();
 		});
 	}
-	$scope.delete = function(todo){
+	$scope.delete = function(bike){
 		bikeService.delete(bike._id).then(function(res){
 			load();
 		});
