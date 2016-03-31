@@ -24,13 +24,11 @@ function run($rootScope, $location){
 }
 angular.module('app', ['ngRoute'])
     .config(config)
-    .controller('mainController', mainController)
-		.controller('trekController', trekController)
-		.controller('bikeController', bikeController)
+		// .controller('trekController', trekController)
+		// .controller('bikeController', bikeController)
 		.controller('myprofileController', myprofileController)
-    .service('todoService', todoService)
-		.service('trekService', trekService)
-		.service('bikeService', bikeService)
+		// .service('trekService', trekService)
+		// .service('bikeService', bikeService)
 		.service('myprofileService', myprofileService)
     /*.factory('', )*/
     .run(run);
