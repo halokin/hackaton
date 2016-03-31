@@ -1,14 +1,19 @@
 function config($routeProvider) {
 	$routeProvider
-		.when('/', {
-			templateUrl: 'views/main.html',
-			controller: 'mainController'
+		.when('/my-profile', {
+			templateUrl: 'views/my-profile.html',
+			controller: 'myprofileController'
 		})
-		.when('/about', {
-			templateUrl: 'views/about.html'
+		.when('/trek', {
+			templateUrl: 'views/trek.html',
+			controller: 'trekController'
+		})
+		.when('/bike', {
+			templateUrl: 'views/bike.html',
+			controller: 'bikeController'
 		})
 		.otherwise({
-			redirectTo: '/'
+			redirectTo: '/my-profile'
 		});
 }
 function run($rootScope, $location){
@@ -20,7 +25,12 @@ function run($rootScope, $location){
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
+		.controller('trekController', trekController)
+		.controller('bikeController', bikeController)
+		.controller('myprofileController', myprofileController)
     .service('todoService', todoService)
+		.service('trekService', trekService)
+		.service('bikeService', bikeService)
+		.service('myprofileService', myprofileService)
     /*.factory('', )*/
     .run(run);
-
