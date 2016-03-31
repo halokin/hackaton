@@ -22,12 +22,12 @@ function run($rootScope, $location){
 		$rootScope.activetab = newVal;
 	});
 }
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'ngMap'])
     .config(config)
-		// .controller('trekController', trekController)
+		.controller('trekController', trekController)
 		// .controller('bikeController', bikeController)
 		.controller('myprofileController', myprofileController)
-		// .service('trekService', trekService)
+		.service('trekService', trekService)
 		// .service('bikeService', bikeService)
 		.service('myprofileService', myprofileService)
     /*.factory('', )*/

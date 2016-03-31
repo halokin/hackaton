@@ -1,40 +1,17 @@
-// trek CONTROLLER
-// function mainController($scope, $http, todoService) {
-// 	$scope.title = "Todo List";
-	
-// 	function load(){
-// 		todoService.get().then(function(res){
-// 			$scope.todos = res.data;
-// 		});
-// 	}
-// 	$scope.add = function(){
-// 		var data = {};
-// 		data.description = $scope.description;
-// 		todoService.create(data).then(function(res){
-// 			load();
-// 		});
-// 		$scope.description = "";
-// 	}
-// 	$scope.update = function(todo){
-// 		todoService.update(todo._id, todo).then(function(res){
-// 			load();
-// 		});
-// 	}
-// 	$scope.delete = function(todo){
-// 		todoService.delete(todo._id).then(function(res){
-// 			load();
-// 		});
-// 	}
-// 	load();
-// }
+
 
 
 // INVITES CONTROLLER
-function trekController($scope, $http, trekService) {
+function trekController($scope, $http, trekService, NgMap) {
 
 
     $scope.title = "Trek List";
 
+    NgMap.getMap().then(function(map) {
+    console.log(map.getCenter());
+    console.log('markers', map.markers);
+    console.log('shapes', map.shapes);
+  });
 
     function load() {
         trekService.get().then(function (res) {
@@ -50,7 +27,7 @@ function trekController($scope, $http, trekService) {
         data.time = $scope.time;
         data.badge = $scope.badge;
         data.image = $scope.imageFile;
-        treksService.create(data).then(function (res) {
+        trekService.create(data).then(function (res) {
             load();
         });
         $scope.description = "";
@@ -60,11 +37,11 @@ function trekController($scope, $http, trekService) {
         $scope.imageFile = "";
         location.reload();
     }
-    $scope.update = function (treks) {
-        treksService.update(treks._id, treks).then(function (res) {});
+    $scope.update = function (trek) {
+        trekService.update(trek._id, treks).then(function (res) {});
     }
-    $scope.delete = function (treks) {
-        treksService.delete(treks._id).then(function (res) {
+    $scope.delete = function (trek) {
+        trekService.delete(trek._id).then(function (res) {
             load();
         });
     }

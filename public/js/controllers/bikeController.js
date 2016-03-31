@@ -1,5 +1,5 @@
 // Bike Controller
-function BikeController($scope, $http, bikeService) {
+function bikeController($scope, $http, bikeService) {
 	$scope.title = "Bike";
 	
 	function load(){
@@ -16,7 +16,7 @@ function BikeController($scope, $http, bikeService) {
 		$scope.description = "";
 	}
 	$scope.update = function(bike){
-		bikeService.update(todo._id, bike).then(function(res){
+		bikeService.update(bike._id, bike).then(function(res){
 			load();
 		});
 	}

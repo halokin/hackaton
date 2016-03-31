@@ -1,0 +1,11 @@
+body{
+    padding-top: 70px;
+	border-bottom: 3px solid #F0DB4F;
+	background-image: url(http://ledomainedespierres.com/wp-content/uploads/2015/05/randonnee-85920.jpg);
+}
+.navbar-header img{
+	transition: 0.4s;
+}
+.navbar-header img:hover{
+	transform: rotate(360deg);
+}  
