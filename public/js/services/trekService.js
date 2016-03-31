@@ -1,5 +1,5 @@
 // TREK SERVICE
-function todoTrek($http) {
+function trekService($http) {
     return {
         get : function() {
             return $http.get('/treks');

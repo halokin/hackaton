@@ -1,9 +1,9 @@
 // ROUTES TODOS
-var Todo = require('../models/todo.js');
+var myprofile = require('../models/myprofile.js');
 module.exports 	= function(app) {
-	app.get('/todos', Todo.findAll);
-	app.post('/todos', Todo.create);
-	app.put('/todos/:id', Todo.update);
-	app.delete('/todos/:id', Todo.delete);
+	app.get('/myprofiles', Myprofile.findAll);
+	app.post('/myprofiles', Myprofile.create);
+	app.put('/myprofiles/:id', Myprofile.update);
+	app.delete('/myprofiles/:id', Myprofile.delete);
     
 }

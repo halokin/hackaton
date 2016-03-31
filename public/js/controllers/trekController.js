@@ -30,7 +30,7 @@
 
 
 // INVITES CONTROLLER
-function treksController($scope, $http, treksService) {
+function trekController($scope, $http, trekService) {
 
 
     $scope.title = "Trek List";

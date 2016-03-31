@@ -1,9 +1,9 @@
 // ROUTES TODOS
-var Todo = require('../models/todo.js');
+var Trek = require('../models/trek.js');
 module.exports 	= function(app) {
-	app.get('/todos', Todo.findAll);
-	app.post('/todos', Todo.create);
-	app.put('/todos/:id', Todo.update);
-	app.delete('/todos/:id', Todo.delete);
+	app.get('/trekes', Trek.findAll);
+	app.post('/trekes', Trek.create);
+	app.put('/trekes/:id', Trek.update);
+	app.delete('/trekes/:id', Trek.delete);
     
 }

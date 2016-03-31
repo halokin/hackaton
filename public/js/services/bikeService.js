@@ -1,4 +1,4 @@
-// TODO SERVICE
+// BIKE SERVICE
 function bikeService($http) {
     return {
         get : function() {

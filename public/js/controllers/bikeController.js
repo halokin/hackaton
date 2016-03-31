@@ -1,5 +1,5 @@
-// MAIN CONTROLLER
-function mainController($scope, $http, bikeService) {
+// Bike Controller
+function BikeController($scope, $http, bikeService) {
 	$scope.title = "Bike";
 	
 	function load(){
