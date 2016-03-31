@@ -2,41 +2,41 @@
 var mongoose = require('mongoose');
 
 
-var invitesSchema = new mongoose.Schema({
+var trekSchema= new mongoose.Schema({
     description: String,
-    distance: number,
+    distance: Number,
     badge: String,
-    time: number,
+    time: Number,
     image: String
 });
 
-var Treks = {
+var Trek = {
 
-    model: mongoose.model('Treks', treksSchema),
+    model: mongoose.model('Trek', trekSchema),
 
     create: function (req, res) {
-        Treks.model.create(req.body, function () {
+        Trek.model.create(req.body, function () {
             res.sendStatus(200);
         })
     },
 
     findAll: function (req, res) {
-        Treks.model.find(function (err, data) {
+        Trek.model.find(function (err, data) {
             res.send(data);
         });
     },
 
     update: function (req, res) {
-        Treks.model.findByIdAndUpdate(req.params.id, req.body, function () {
+        Trek.model.findByIdAndUpdate(req.params.id, req.body, function () {
             res.sendStatus(200);
         })
     },
 
     delete: function (req, res) {
-        Treks.model.findByIdAndRemove(req.params.id, function () {
+        Trek.model.findByIdAndRemove(req.params.id, function () {
             res.sendStatus(200);
         })
     }
 }
 
-module.exports = Invites;
+module.exports = Trek;
