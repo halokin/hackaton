@@ -1,6 +1,6 @@
 <div class="container">
   <input type='button' class='btn btn-success ' name='first' value='+' ng-click="plusj(j)" />
-  <input type='button' class='btn btn-warning ' name='first' value='update' ng-click="plusk(k)" />
+  <input type='button' class='btn btn-warning ' name='first' value='update' ng-click="plusl(l)" />
   <!--Create your profile. ------------------------------------------------------------------------------------------------------------------------------------------>
 
   <div class="" ng-show="j == 1">
@@ -17,18 +17,18 @@
                   <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="firstname">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="myprofile.firstname">
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="lastname">
+                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="myprofile.lastname">
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email"ng-model="email">
+                    <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email"ng-model="myprofile.email">
                   </div>
                 </form>
               </div>
@@ -47,22 +47,22 @@
                   <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Rue" ng-model="street">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Rue" ng-model="myprofile.street">
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Zip Code" ng-model="zip">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Zip Code" ng-model="myprofile.zip">
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-12">
                       <div class="form-group">
-                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Ville" ng-model="city" options="{ types: '(cities)'}" />
+                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Ville" ng-model="myprofile.city" options="{ types: '(cities)'}" />
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-12">
                       <div class="form-group">
-                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="country" />
+                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="myprofile.country" />
                       </div>
                     </div>
                   </div>
@@ -82,19 +82,19 @@
                 <form role="form">
 
                   <div class="form-group">
-                    <textarea class="form-control input-sm" rows="3" ng-model="description" placeholder="Write about her/ him"></textarea>
+                    <textarea class="form-control input-sm" rows="3" ng-model="myprofile.description" placeholder="Write about her/ him"></textarea>
 
                   </div>
 
                   <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="checkbox">
-                        <label><input type="checkbox" ng-model="homme" value="male"> Homme</label>
+                        <label><input type="checkbox" ng-model="myprofile.homme" value="male"> Homme</label>
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="checkbox">
-                        <label><input type="checkbox" ng-model="femme" value="female"> Femme</label>
+                        <label><input type="checkbox" ng-model="myprofile.femme" value="female"> Femme</label>
                       </div>
                     </div>
 
@@ -116,7 +116,7 @@
                   <div class="row" style="align-text:center;">
 
                     <form>
-                      <input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
+                      <input type='file' ng-model='myprofile.imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
                       <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" id="preview">
                     </form>
                   </div>
@@ -149,10 +149,10 @@
     </div>
   </div>
   <!--Update your profile. ------------------------------------------------------------------------------------------------------------------------------------------>
-  <div class="" ng-show="k == 1">
+  <div class="" ng-show="l == 1">
     <div class="col-md-9">
       <div class="container invites">
-        <div class="row centered-form" ng-show="i == 0">
+        <div class="row centered-form" ng-show="u == 0">
           <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-default">
               <div class="panel-heading ">
@@ -163,25 +163,25 @@
                   <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="firstname">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="myprofile.firstname">
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="lastname">
+                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="myprofile.lastname">
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email"ng-model="email">
+                    <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email"ng-model="myprofile.email">
                   </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="row centered-form" ng-show="i == 1">
+        <div class="row centered-form" ng-show="u == 1">
           <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -193,22 +193,22 @@
                   <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Rue" ng-model="street">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Rue" ng-model="myprofile.street">
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Zip Code" ng-model="zip">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Zip Code" ng-model="myprofile.zip">
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-12">
                       <div class="form-group">
-                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Ville" ng-model="city" options="{ types: '(cities)'}" />
+                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Ville" ng-model="myprofile.city" options="{ types: '(cities)'}" />
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-12">
                       <div class="form-group">
-                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="country" />
+                        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="myprofile.country" />
                       </div>
                     </div>
                   </div>
@@ -218,7 +218,7 @@
           </div>
         </div>
 
-        <div class="row centered-form" ng-show="i == 1">
+        <div class="row centered-form" ng-show="u == 1">
           <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -228,19 +228,19 @@
                 <form role="form">
 
                   <div class="form-group">
-                    <textarea class="form-control input-sm" rows="3" ng-model="description" placeholder="Write about her/ him"></textarea>
+                    <textarea class="form-control input-sm" rows="3" ng-model="myprofile.description" placeholder="Write about her/ him"></textarea>
 
                   </div>
 
                   <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="checkbox">
-                        <label><input type="checkbox" ng-model="homme" value="male"> Homme</label>
+                        <label><input type="checkbox" ng-model="myprofile.homme" value="male"> Homme</label>
                       </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                       <div class="checkbox">
-                        <label><input type="checkbox" ng-model="femme" value="female"> Femme</label>
+                        <label><input type="checkbox" ng-model="myprofile.femme" value="female"> Femme</label>
                       </div>
                     </div>
 
@@ -251,7 +251,7 @@
           </div>
         </div>
 
-        <div class="row centered-form" ng-show= "i == 2">
+        <div class="row centered-form" ng-show= "u == 2">
           <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -262,12 +262,12 @@
                   <div class="row" style="align-text:center;">
 
                     <form>
-                      <input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
+                      <input type='file' ng-model='myprofile.imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
                       <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" id="preview">
                     </form>
                   </div>
 
-                  <button type="submit" value="Ajouter" class="btn btn-success btn-block" ng-click="update(myprofile); send()">Update</button>
+                  <button type="submit" value="Ajouter" class="btn btn-success btn-block" ng-click="update(myprofile);myprofile. send()">Update</button>
 
 
 
@@ -281,8 +281,8 @@
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
           <div>
             <div style="float:right">
-              <input type='button' class='btn btn_orange ' name='first' value='previous' ng-show="i > 0"ng-click="moins(i)" />
-              <input type='button' class='btn btn_orange' name='previous' value='Next' ng-show="i <= 1" ng-click="plus(i)"/>
+              <input type='button' class='btn btn_orange ' name='first' value='previous' ng-show="u > 0"ng-click="moinss(u)" />
+              <input type='button' class='btn btn_orange' name='previous' value='Next' ng-show="u <= 1" ng-click="pluss(u)"/>
             </div>
           </div>
         </div>
@@ -294,6 +294,92 @@
 
     </div>
   </div>
+  <!--profile. ------------------------------------------------------------------------------------------------------------------------------------------>
+  <!--profile. ------------------------------------------------------------------------------------------------------------------------------------------>
+
+  <div class="col-lg-6 col-sm-6" ng-hide="l == 1 || j == 1" ng-repeat="myprofile  in myprofiles">
+    <div class="card hovercard">
+      <div class="card-background">
+
+        <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
+        <!-- http://lorempixel.com/850/280/people/9/ -->
+      </div>
+      <div class="useravatar">
+        <img alt="" ng-src="{{myprofile.imageFile}}">
+      </div>
+      <div class="card-info"> <span class="card-title">{{myprofile.firstname}}</span>
+
+      </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <div class="hidden-xs">Informations</div>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <div class="hidden-xs">Data</div>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <div class="hidden-xs">Badges</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <h3>Présentation</h3>
+          <h5>{{myprofile.description}}</h5>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+          <h3>Data</h3>
+
+          <h5>Kms:</h5>
+          <h5>Heures:</h5>
+          <h5>Nombre de Parcours:</h5>
+          <h5>Niveau: </h5>
+        </div>
+        <div class="tab-pane fade in" id="tab3">
+          <h3>Hiking</h3>
+          <div class="col-md-6" ng-repeat="Badges in myprofile.badgeshike">
+
+          </div>
+
+
+          <h3>Biking</h3>
+
+          <div class="col-md-6" ng-repeat="Badges in myprofile.badgeshike">
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+  </div>
+  <div class="col-md-6">
+    <input type="text" name="name" value="" ng-model="city">
+    <input type='button' class='btn btn-success ' name='first' value='update' ng-click="search()" />
+    <img ng-src="'http://openweathermap.org/img/w/' + {{meteo[0]['icon']}} + '.png'" alt="" />
+    <p>
+
+      Météo de {{meteo.name}}
+    </p>
+<ng-map center="41,-87" zoom="3"></ng-map>
+  </div>
+
+  </div>
+
+
 
 
 

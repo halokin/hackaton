@@ -1,8 +1,9 @@
-// BIKE SERVICE
+// TODO SERVICE
 function bikeService($http) {
     return {
         get : function() {
-            return $http.get('/bike');
+            return $http.get('https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json')
+
         },
         update : function(id, data){
             return $http.put('/bike/' + id, data);

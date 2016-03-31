@@ -1,7 +1,7 @@
 // MAIN CONTROLLER
 function mainController($scope, $http, bikeService) {
 	$scope.title = "Bike";
-	
+
 	function load(){
 		bikeService.get().then(function(res){
 			$scope.bikes = res.data;
@@ -14,7 +14,7 @@ function mainController($scope, $http, bikeService) {
 			load();
 		});
 		$scope.description = "";
-	}
+	};
 	$scope.update = function(todo){
 		bikeService.update(todo._id, bike).then(function(res){
 			load();
@@ -24,6 +24,6 @@ function mainController($scope, $http, bikeService) {
 		bikeService.delete(bike._id).then(function(res){
 			load();
 		});
-	}
+	};
 	load();
 }
