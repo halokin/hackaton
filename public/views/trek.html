@@ -1,12 +1,8 @@
-<body>
-    <div class="header">
-       <h1>Choose a trek</h1>
-   </div>
-
-
-
-   <!-- Champs de recherche / tri -->
-   <div class="trek-field col-md-6">
+<div class="header col-md-12">
+    <h1>Choose a trek</h1>
+</div>
+<!-- Champs de recherche / tri -->
+<div class="trek-field col-md-12">
     <h2>Search a trek</h2>
     <div class=" searchingtreks">
         <input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
@@ -16,44 +12,53 @@
             <option value="distance">sort by distance</option>
         </select>
     </div>
+</div>
 
 
 
 
 
 
-
-
-<div class="list-group">
-
-    <div class="row">
-        <div class="col-md-6">
-            <h3 class="trek-description">Mont Blanc</h3>
-            </div>
-        <div class="col-md-6">
-            <button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+<div class="row">
+<div class="col-lg-6 col-sm-6">
+ <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <h3>Mont Blanc</h3>
         </div>
 
+        <button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+      </div>
     </div>
 
+    <div class="card hovercard">
+        <div class="card-background">
 
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="maps">
-                <div class="trekpathmap">
-
-                    <ng-map zoom="11" center="41.875696,-87.624207">
-                    <kml-layer url="http://www.google.com/maps/d/kml?mid=z4t2qn7YIVEQ.kA0ng124KU8Q">
-                </kml-layer>
-            </ng-map>
-
-
+            <div class="col-md-6">
+    <ng-map zoom="11" center="41.875696,-87.624207">
+        <kml-layer url="http://www.google.com/maps/d/kml?mid=z4t2qn7YIVEQ.kA0ng124KU8Q">
+        </kml-layer>
+    </ng-map>
         </div>
-         <div class="col-md-6">
-        <div class="weathermap">
-
+       <div class="col-md-6">
+    
         </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="trek.distance" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="hidden-xs">14 km</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="trek.hours" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div class="hidden-xs">16 h</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="badge" class="btn btn-default" href="#tab3" data-toggle="tab">
+                <div class="hidden-xs"><img src="img/mountain.png" width="34px"></div>
+            </button>
         </div>
     </div>
 </div>
@@ -61,25 +66,47 @@
 
 
 <div class="row">
-    <div class="col-md-4">
-       <div class="trek-distance">
-        12 km{{trek.distance}}
-    </div></div>
-
-    <div class="col-md-4">
-        <div class="trek-time">
-            12 h{{trek.time}}
-        </div></div>
-        <div class="col-md-4">
-            <div class="trek-badge">
-                image {{trek.badge}}
-            </div></div>
-
-
-
+<div class="col-lg-6 col-sm-6">
+ <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <h3>K2</h3>
         </div>
 
+        <button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+      </div>
+    </div>
+
+    <div class="card hovercard">
+        <div class="card-background">
+
+            <div class="col-md-6">
+    <ng-map zoom="11" center="41.875696,-87.624207">
+        <kml-layer url="http://www.camptocamp.org/routes/fr/664652.kml">
+        </kml-layer>
+    </ng-map>
+        </div>
+       <div class="col-md-6">
+    
+        </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="trek.distance" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="hidden-xs">12 km</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="trek.hours" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div class="hidden-xs">10 h</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="badge" class="btn btn-default" href="#tab3" data-toggle="tab">
+                <div class="hidden-xs"><img src="img/hiking.png" width="34px"></div>
+            </button>
+        </div>
     </div>
 </div>
 </div>
-</body>
+
