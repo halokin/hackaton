@@ -1,0 +1,12 @@
+body{
+    padding-top: 70px;
+    background: url();
+	border-bottom: 3px solid #F0DB4F;
+	background-color: red;
+}
+.navbar-header img{
+	transition: 0.4s;
+}
+.navbar-header img:hover{
+	transform: rotate(360deg);
+}  

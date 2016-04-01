@@ -1,39 +1,27 @@
 // trek CONTROLLER
-// function mainController($scope, $http, todoService) {
-// 	$scope.title = "Todo List";
-	
-// 	function load(){
-// 		todoService.get().then(function(res){
-// 			$scope.todos = res.data;
-// 		});
-// 	}
-// 	$scope.add = function(){
-// 		var data = {};
-// 		data.description = $scope.description;
-// 		todoService.create(data).then(function(res){
-// 			load();
-// 		});
-// 		$scope.description = "";
-// 	}
-// 	$scope.update = function(todo){
-// 		todoService.update(todo._id, todo).then(function(res){
-// 			load();
-// 		});
-// 	}
-// 	$scope.delete = function(todo){
-// 		todoService.delete(todo._id).then(function(res){
-// 			load();
-// 		});
-// 	}
-// 	load();
-// }
-
-
-// INVITES CONTROLLER
 function trekController($scope, $http, trekService) {
 
 
     $scope.title = "Trek List";
+
+
+      var kmlUrl = 'http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml';
+  
+  $scope.kmlLayerOptions = {
+    url: kmlUrl,
+  };
+  $scope.map = {
+    //Chicago
+    center: {
+      latitude: 41.875696,
+      longitude: -87.624207
+    },
+    zoom:8,
+    showWeather: false,
+    showTraffic: false,
+    showCloud: false,
+    showKml: true,
+  };
 
 
     function load() {

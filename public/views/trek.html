@@ -1,38 +1,20 @@
-<div class="header">
-	<h1>{{trek.title}}</h1>
-</div>
+<body>
+    <div class="header">
+       <h1>Choose a trek</h1>
+   </div>
 
 
 
-<!-- Champs de recherche / tri -->
-        <div class="plat-field col-md-6">
-            <h2>Search a trek</h2>
-            <div class=" searchingtreks">
-                <input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
-                <select ng-model="order" class="orderBy" style="color:black;">
-                    <option value="" disabled selected hidden>Sort by</option>
-                    <option value="description">Sort by name</option>
-                    <option value="distance">sort by distance</option>
-                </select>
-            </div>
-        </div>
-
-
-
-
-<!-- treks list -->
-<div class="list-group">
-    <div class="list-group-item" ng-repeat="trek in treks | filter:{description: query} | orderBy:order">
-        <form class=" form-inline">
-            <div class="form-group secondForm">
-                <img class="imgAdd" src="{{trek.image || 'http://image.jpg'}}" />
-                <div class="listInput">
-                    <input type="text" class="form-control secondPart firsttitle firstChild" id="inputMessage" ng-model="trek.description" placeholder="Prénom">
-                    <input type="text" class="form-control secondPart" id="inputMessage" ng-model="invite.date" placeholder="Dernière invitation">
-                    <input type="text" class="form-control secondPart" id="inputMessage" ng-model="invite.restrictions" placeholder="Aucune restriction">
-                </div>
-            </div>
-        </form>
+   <!-- Champs de recherche / tri -->
+   <div class="trek-field col-md-6">
+    <h2>Search a trek</h2>
+    <div class=" searchingtreks">
+        <input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
+        <select ng-model="order" class="orderBy" style="color:black;">
+            <option value="" disabled selected hidden>Sort by</option>
+            <option value="description">Sort by name</option>
+            <option value="distance">sort by distance</option>
+        </select>
     </div>
 </div>
 
@@ -40,25 +22,50 @@
 
 
 
-<form class="form-inline">
-	<div class="form-group">
-		<input type="text" class="form-control" id="inputMessage" 
-		placeholder="Your task" ng-model="description">
-	</div>
-	<button type="submit" class="btn btn-default" ng-click="add()">Add</button>
+
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="trek in treks | filter:{description: query} | orderBy:order">
+        <div class="list-header">
+            <h3 class="trek-description"></h3>
+            <button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+        </div>
+        <form class=" form-inline">
+            <div class="form-group secondForm">
+                <img class="imgAdd" src="{{trek.image || 'image.jpg'}}" />
+                
+                <div class="maps">
+                    <div class="trekpathmap">
+
+                      <div class="google-map" center="map.center" zoom="map.zoom" draggable="true">
+               <!-- <layer type="TrafficLayer"></layer>
+                <layer type="WeatherLayer" namespace="weather"></layer>
+                <layer type="CloudLayer" namespace="weather"></layer>-->
+                <layer type="KmlLayer" options="kmlLayerOptions"></layer>
+            </div>
+
+        </div>
+        <div class="weathermap">
+
+        </div>
+    </div>
+
+</div>
 </form>
-<hr>
-<ul class="list-group">
-	<li class="list-group-item" ng-repeat="todo in todos">
-		<form class="form-inline">
-			<div class="form-group">
-				<input type="text" class="form-control" id="inputMessage" 
-				ng-model="todo.description">
-			</div>
-			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(todo)">Update</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(todo)">Delete</button>
-			</div>
-		</form>
-	</li>
-</ul>
+<div class="row"  >
+    <div class="col-md-4">
+
+        <div class="trek-distance">
+            {{trek.distance}}
+        </div>
+        <div class="trek-time">
+            {{trek.time}}
+        </div>
+        <div class="trek-badge">
+            {{trek.badge}}
+        </div>
+    </div>
+    
+</div>
+</div>
+</div>
+</body>
