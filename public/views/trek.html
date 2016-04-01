@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body>
     <div class="header">
        <h1>Choose a trek</h1>
@@ -19,10 +20,55 @@
 </div>
 
 
+=======
+
+<div class="header col-md-12" ng-init="citii()">
+	<h1>Choose a trek</h1>
+</div>
+<!-- Champs de recherche / tri -->
+<div class="trek-field col-md-12">
+	<h2>Search a trek</h2>
+	<div class=" searchingtreks">
+		<input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
+		<select ng-model="order" class="orderBy" style="color:black;">
+			<option value="" disabled selected hidden>Sort by</option>
+			<option value="description">Sort by name</option>
+			<option value="distance">sort by distance</option>
+		</select>
+	</div>
+</div>
+>>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
+
+<div class="col-md-6">
+	<h3 class="trek-description">Mont Blanc</h3>
+	<ng-map zoom="11" center="41.875696,-87.624207">
+		<kml-layer url="http://www.google.com/maps/d/kml?mid=z4t2qn7YIVEQ.kA0ng124KU8Q">
+		</kml-layer>
+	</ng-map>
+	<div class="col-md-4">
+		<div class="trek-distance">
+			12 km{{trek.distance}}
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="trek-time">
+			12 h{{trek.time}}
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="trek-badge">
+			image {{trek.badge}}
+		</div>
+	</div>
+
+<div class="col-md-6">
+	<button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+</div>
+</div>
+<div class="col-md-6" >
 
 
-
-
+<<<<<<< HEAD
 <div class="list-group">
     <div class="list-group-item" ng-repeat="trek in treks | filter:{description: query} | orderBy:order">
         <div class="list-header">
@@ -35,6 +81,11 @@
                 
                 <div class="maps">
                     <div class="trekpathmap">
+=======
+</div>
+<div class="col-md-12">
+
+>>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
 
                       <div class="google-map" center="map.center" zoom="map.zoom" draggable="true">
                <!-- <layer type="TrafficLayer"></layer>
@@ -43,12 +94,35 @@
                 <layer type="KmlLayer" options="kmlLayerOptions"></layer>
             </div>
 
+<<<<<<< HEAD
         </div>
         <div class="weathermap">
+=======
+	<div class="col-md-6">
+		<h3 class="trek-description">K2</h3>
+		<ng-map zoom="11" center="35.8800523,76.375012,11">
+			<kml-layer url="http://www.camptocamp.org/routes/fr/664652.kml">
+			</kml-layer>
+		</ng-map>
+		<div class="col-md-4">
+			<div class="trek-distance">
+				12 km{{trek.distance}}
+			</div></div>
+			<div class="col-md-4">
+				<div class="trek-time">
+					12 h{{trek.time}}
+				</div></div>
+				<div class="col-md-4">
+					<div class="trek-badge">
+						image {{trek.badge}}
+					</div>
+				</div>
+>>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
 
         </div>
     </div>
 
+<<<<<<< HEAD
 </div>
 </form>
 <div class="row"  >
@@ -69,3 +143,73 @@
 </div>
 </div>
 </body>
+=======
+		<div class="col-md-6">
+			<button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default weather-panel">
+			<div class="panel-heading">Current weather in {{citiesres[0].name}}<br><small id="currentTime" class="supersmall"></small></div>
+			<div class="row">
+				<div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{citiesres[0].weather[0].icon}}.png" alt="" /></div>
+				<div class="col-sm-6" style="padding: 0px;">
+					<h1 class="temp"><span id="currentTemperature">{{citiesres[0].main.temp}}</span><span>°</span></h1>
+					<p>
+						<small id="currentSummary">{{citiesres[0].weather[0].main}}</small>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12"><strong></strong><br>
+					<span>wind: </span><span id="currentWind">{{citiesres[0].wind.speed}}</span><span> mph(s)</span><br>
+					<span id="hourlySummary">{{citiesres[0].weather[0].description}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default weather-panel">
+			<div class="panel-heading">Current weather in {{citiesres[1].name}}<br><small id="currentTime" class="supersmall"></small></div>
+			<div class="row">
+				<div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{citiesres[1].weather[0].icon}}.png" alt="" /></div>
+				<div class="col-sm-6" style="padding: 0px;">
+					<h1 class="temp"><span id="currentTemperature">{{citiesres[1].main.temp}}</span><span>°</span></h1>
+					<p>
+						<small id="currentSummary">{{citiesres[1].weather[0].main}}</small>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12"><strong></strong><br>
+					<span>wind: </span><span id="currentWind">{{citiesres[1].wind.speed}}</span><span> mph(s)</span><br>
+					<span id="hourlySummary">{{citiesres[1].weather[0].description}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default weather-panel">
+			<div class="panel-heading">Current weather in {{citiesres[2].name}}<br><small id="currentTime" class="supersmall"></small></div>
+			<div class="row">
+				<div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{citiesres[2].weather[0].icon}}.png" alt="" /></div>
+				<div class="col-sm-6" style="padding: 0px;">
+					<h1 class="temp"><span id="currentTemperature">{{citiesres[2].main.temp}}</span><span>°</span></h1>
+					<p>
+						<small id="currentSummary">{{citiesres[2].weather[0].main}}</small>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12"><strong></strong><br>
+					<span>wind: </span><span id="currentWind">{{citiesres[2].wind.speed}}</span><span> mph(s)</span><br>
+					<span id="hourlySummary">{{citiesres[2].weather[0].description}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+>>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0

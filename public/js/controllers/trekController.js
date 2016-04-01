@@ -1,6 +1,52 @@
 // trek CONTROLLER
+<<<<<<< HEAD
 function trekController($scope, $http, trekService) {
+=======
+// function mainController($scope, $http, todoService) {
+// 	$scope.title = "Todo List";
 
+// 	function load(){
+// 		todoService.get().then(function(res){
+// 			$scope.todos = res.data;
+// 		});
+// 	}
+// 	$scope.add = function(){
+// 		var data = {};
+// 		data.description = $scope.description;
+// 		todoService.create(data).then(function(res){
+// 			load();
+// 		});
+// 		$scope.description = "";
+// 	}
+// 	$scope.update = function(todo){
+// 		todoService.update(todo._id, todo).then(function(res){
+// 			load();
+// 		});
+// 	}
+// 	$scope.delete = function(todo){
+// 		todoService.delete(todo._id).then(function(res){
+// 			load();
+// 		});
+// 	}
+// 	load();
+// }
+
+
+// INVITES CONTROLLER
+function trekController($scope, $http, trekService, meteoService) {
+
+    $scope.cities=['Paris', 'London','Barcelona'];
+    $scope.citiesres=[];
+    $scope.citii= function(){
+        for( var i = 0; i < $scope.cities.length; i++){
+        meteoService.get($scope.cities[i]).then(function(res){
+          $scope.citiesres.push(res.data);
+>>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
+
+
+        });
+      }
+  };
 
     $scope.title = "Trek List";
 
@@ -25,7 +71,7 @@ function trekController($scope, $http, trekService) {
 
 
     function load() {
-        trekService.get().then(function (res) {
+        trekService.get().success(function (res) {
             $scope.treks = res.data;
         });
 

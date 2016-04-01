@@ -1,7 +1,7 @@
 // Bike Controller
-function BikeController($scope, $http, bikeService) {
+function bikeController($scope, $http, bikeService) {
 	$scope.title = "Bike";
-	
+
 	function load(){
 		bikeService.get().then(function(res){
 			$scope.bikes = res.data;

@@ -13,5 +13,5 @@ function myprofileService($http) {
         delete : function(id) {
             return $http.delete('/myprofiles/' + id);
         }
-    }
-};
+    };
+}
