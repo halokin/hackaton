@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // trek CONTROLLER
 <<<<<<< HEAD
 function trekController($scope, $http, trekService) {
@@ -42,6 +43,13 @@ function trekController($scope, $http, trekService, meteoService) {
         meteoService.get($scope.cities[i]).then(function(res){
           $scope.citiesres.push(res.data);
 >>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
+=======
+
+
+
+// INVITES CONTROLLER
+function trekController($scope, $http, trekService, NgMap) {
+>>>>>>> edbcd059523abb11653f57ee05f5b6124dc7482e
 
 
         });
@@ -50,6 +58,11 @@ function trekController($scope, $http, trekService, meteoService) {
 
     $scope.title = "Trek List";
 
+    NgMap.getMap().then(function(map) {
+    console.log(map.getCenter());
+    console.log('markers', map.markers);
+    console.log('shapes', map.shapes);
+  });
 
       var kmlUrl = 'http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml';
   
@@ -84,7 +97,7 @@ function trekController($scope, $http, trekService, meteoService) {
         data.time = $scope.time;
         data.badge = $scope.badge;
         data.image = $scope.imageFile;
-        treksService.create(data).then(function (res) {
+        trekService.create(data).then(function (res) {
             load();
         });
         $scope.description = "";
@@ -94,11 +107,11 @@ function trekController($scope, $http, trekService, meteoService) {
         $scope.imageFile = "";
         location.reload();
     }
-    $scope.update = function (treks) {
-        treksService.update(treks._id, treks).then(function (res) {});
+    $scope.update = function (trek) {
+        trekService.update(trek._id, treks).then(function (res) {});
     }
-    $scope.delete = function (treks) {
-        treksService.delete(treks._id).then(function (res) {
+    $scope.delete = function (trek) {
+        trekService.delete(trek._id).then(function (res) {
             load();
         });
     }

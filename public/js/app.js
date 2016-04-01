@@ -22,6 +22,7 @@ function run($rootScope, $location){
 		$rootScope.activetab = newVal;
 	});
 }
+
 angular.module('app', ['ngRoute','ngMap'])
     .config(config)
 		.controller('trekController', trekController)
@@ -29,6 +30,7 @@ angular.module('app', ['ngRoute','ngMap'])
 		.controller('myprofileController', myprofileController)
 		.service('trekService', trekService)
 		.service('bikeService', bikeService)
+
 		.service('myprofileService', myprofileService)
 		.service('meteoService', meteoService)
     /*.factory('', )*/

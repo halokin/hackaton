@@ -3,7 +3,12 @@ var mongoose = require('mongoose');
 
 
 var bikeSchema = new mongoose.Schema({
-  description: String
+	description: String,
+	description: String,
+	distance: Number,
+	badge: String,
+    time: Number,
+    image: String
 
 
 });
@@ -38,5 +43,4 @@ var Bike = {
 		})
 	} 
 }
-module.exports = Bike
-;
+module.exports = Bike;
