@@ -30,8 +30,19 @@
 
 
 // INVITES CONTROLLER
-function trekController($scope, $http, trekService) {
+function trekController($scope, $http, trekService, meteoService) {
 
+    $scope.cities=['Paris', 'London','Barcelona'];
+    $scope.citiesres=[];
+    $scope.citii= function(){
+        for( var i = 0; i < $scope.cities.length; i++){
+        meteoService.get($scope.cities[i]).then(function(res){
+          $scope.citiesres.push(res.data);
+
+
+        });
+      }
+  };
 
     $scope.title = "Trek List";
 

@@ -81,6 +81,18 @@ function myprofileController($scope, $http, myprofileService, $location, meteoSe
   //
   //
   // };
+// $scope.cities =[Paris, London];
+// $scope.citiesres=[];
+//   $scope.cities= function(){
+//
+//     for( var i = 0; i < $scope.cities.length; i++){
+//     meteoService.get($scope.cities[i]).then(function(res){
+//       $scope.citiesres.push(res.data);
+//
+//     });
+//   }
+// };
+
   $scope.search = function (){
     meteoService.get($scope.city).then(function(res){
       $scope.meteo = res.data;

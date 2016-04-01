@@ -1,64 +1,140 @@
-<div class="header">
-	<h1>{{trek.title}}</h1>
+
+<div class="header col-md-12" ng-init="citii()">
+	<h1>Choose a trek</h1>
 </div>
-
-
-
 <!-- Champs de recherche / tri -->
-        <div class="plat-field col-md-6">
-            <h2>Search a trek</h2>
-            <div class=" searchingtreks">
-                <input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
-                <select ng-model="order" class="orderBy" style="color:black;">
-                    <option value="" disabled selected hidden>Sort by</option>
-                    <option value="description">Sort by name</option>
-                    <option value="distance">sort by distance</option>
-                </select>
-            </div>
-        </div>
-
-
-
-
-<!-- treks list -->
-<div class="list-group">
-    <div class="list-group-item" ng-repeat="trek in treks | filter:{description: query} | orderBy:order">
-        <form class=" form-inline">
-            <div class="form-group secondForm">
-                <img class="imgAdd" src="{{trek.image || 'http://image.jpg'}}" />
-                <div class="listInput">
-                    <input type="text" class="form-control secondPart firsttitle firstChild" id="inputMessage" ng-model="trek.description" placeholder="Prénom">
-                    <input type="text" class="form-control secondPart" id="inputMessage" ng-model="invite.date" placeholder="Dernière invitation">
-                    <input type="text" class="form-control secondPart" id="inputMessage" ng-model="invite.restrictions" placeholder="Aucune restriction">
-                </div>
-            </div>
-        </form>
-    </div>
+<div class="trek-field col-md-12">
+	<h2>Search a trek</h2>
+	<div class=" searchingtreks">
+		<input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
+		<select ng-model="order" class="orderBy" style="color:black;">
+			<option value="" disabled selected hidden>Sort by</option>
+			<option value="description">Sort by name</option>
+			<option value="distance">sort by distance</option>
+		</select>
+	</div>
 </div>
 
-
-
-
-
-<form class="form-inline">
-	<div class="form-group">
-		<input type="text" class="form-control" id="inputMessage" 
-		placeholder="Your task" ng-model="description">
+<div class="col-md-6">
+	<h3 class="trek-description">Mont Blanc</h3>
+	<ng-map zoom="11" center="41.875696,-87.624207">
+		<kml-layer url="http://www.google.com/maps/d/kml?mid=z4t2qn7YIVEQ.kA0ng124KU8Q">
+		</kml-layer>
+	</ng-map>
+	<div class="col-md-4">
+		<div class="trek-distance">
+			12 km{{trek.distance}}
+		</div>
 	</div>
-	<button type="submit" class="btn btn-default" ng-click="add()">Add</button>
-</form>
-<hr>
-<ul class="list-group">
-	<li class="list-group-item" ng-repeat="todo in todos">
-		<form class="form-inline">
-			<div class="form-group">
-				<input type="text" class="form-control" id="inputMessage" 
-				ng-model="todo.description">
+	<div class="col-md-4">
+		<div class="trek-time">
+			12 h{{trek.time}}
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="trek-badge">
+			image {{trek.badge}}
+		</div>
+	</div>
+
+<div class="col-md-6">
+	<button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+</div>
+</div>
+<div class="col-md-6" >
+
+
+</div>
+<div class="col-md-12">
+
+
+
+	<div class="col-md-6">
+		<h3 class="trek-description">K2</h3>
+		<ng-map zoom="11" center="35.8800523,76.375012,11">
+			<kml-layer url="http://www.camptocamp.org/routes/fr/664652.kml">
+			</kml-layer>
+		</ng-map>
+		<div class="col-md-4">
+			<div class="trek-distance">
+				12 km{{trek.distance}}
+			</div></div>
+			<div class="col-md-4">
+				<div class="trek-time">
+					12 h{{trek.time}}
+				</div></div>
+				<div class="col-md-4">
+					<div class="trek-badge">
+						image {{trek.badge}}
+					</div>
+				</div>
+
+
+		<div class="col-md-6">
+			<button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default weather-panel">
+			<div class="panel-heading">Current weather in {{citiesres[0].name}}<br><small id="currentTime" class="supersmall"></small></div>
+			<div class="row">
+				<div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{citiesres[0].weather[0].icon}}.png" alt="" /></div>
+				<div class="col-sm-6" style="padding: 0px;">
+					<h1 class="temp"><span id="currentTemperature">{{citiesres[0].main.temp}}</span><span>°</span></h1>
+					<p>
+						<small id="currentSummary">{{citiesres[0].weather[0].main}}</small>
+					</p>
+				</div>
 			</div>
-			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(todo)">Update</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(todo)">Delete</button>
+			<div class="row">
+				<div class="col-sm-12"><strong></strong><br>
+					<span>wind: </span><span id="currentWind">{{citiesres[0].wind.speed}}</span><span> mph(s)</span><br>
+					<span id="hourlySummary">{{citiesres[0].weather[0].description}}</span>
+				</div>
 			</div>
-		</form>
-	</li>
-</ul>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default weather-panel">
+			<div class="panel-heading">Current weather in {{citiesres[1].name}}<br><small id="currentTime" class="supersmall"></small></div>
+			<div class="row">
+				<div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{citiesres[1].weather[0].icon}}.png" alt="" /></div>
+				<div class="col-sm-6" style="padding: 0px;">
+					<h1 class="temp"><span id="currentTemperature">{{citiesres[1].main.temp}}</span><span>°</span></h1>
+					<p>
+						<small id="currentSummary">{{citiesres[1].weather[0].main}}</small>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12"><strong></strong><br>
+					<span>wind: </span><span id="currentWind">{{citiesres[1].wind.speed}}</span><span> mph(s)</span><br>
+					<span id="hourlySummary">{{citiesres[1].weather[0].description}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default weather-panel">
+			<div class="panel-heading">Current weather in {{citiesres[2].name}}<br><small id="currentTime" class="supersmall"></small></div>
+			<div class="row">
+				<div class="col-sm-6 wi" id="currentIcon"><img src="http://openweathermap.org/img/w/{{citiesres[2].weather[0].icon}}.png" alt="" /></div>
+				<div class="col-sm-6" style="padding: 0px;">
+					<h1 class="temp"><span id="currentTemperature">{{citiesres[2].main.temp}}</span><span>°</span></h1>
+					<p>
+						<small id="currentSummary">{{citiesres[2].weather[0].main}}</small>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12"><strong></strong><br>
+					<span>wind: </span><span id="currentWind">{{citiesres[2].wind.speed}}</span><span> mph(s)</span><br>
+					<span id="hourlySummary">{{citiesres[2].weather[0].description}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
