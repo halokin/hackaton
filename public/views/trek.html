@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-<body>
-    <div class="header">
-       <h1>Choose a trek</h1>
-   </div>
-
-
-
-   <!-- Champs de recherche / tri -->
-   <div class="trek-field col-md-6">
-    <h2>Search a trek</h2>
-    <div class=" searchingtreks">
-        <input class="searchInput" type="text" ng-model="query" placeholder="Search for a trek" />
-        <select ng-model="order" class="orderBy" style="color:black;">
-            <option value="" disabled selected hidden>Sort by</option>
-            <option value="description">Sort by name</option>
-            <option value="distance">sort by distance</option>
-        </select>
-    </div>
-</div>
-
-
-=======
-
 <div class="header col-md-12" ng-init="citii()">
 	<h1>Choose a trek</h1>
 </div>
@@ -37,8 +13,8 @@
 		</select>
 	</div>
 </div>
->>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
 
+<div =class="row">
 <div class="col-md-6">
 	<h3 class="trek-description">Mont Blanc</h3>
 	<ng-map zoom="11" center="41.875696,-87.624207">
@@ -65,10 +41,12 @@
 	<button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
 </div>
 </div>
+</div>
+
 <div class="col-md-6" >
 
 
-<<<<<<< HEAD
+
 <div class="list-group">
     <div class="list-group-item" ng-repeat="trek in treks | filter:{description: query} | orderBy:order">
         <div class="list-header">
@@ -81,11 +59,10 @@
                 
                 <div class="maps">
                     <div class="trekpathmap">
-=======
+
 </div>
 <div class="col-md-12">
 
->>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
 
                       <div class="google-map" center="map.center" zoom="map.zoom" draggable="true">
                <!-- <layer type="TrafficLayer"></layer>
@@ -94,10 +71,9 @@
                 <layer type="KmlLayer" options="kmlLayerOptions"></layer>
             </div>
 
-<<<<<<< HEAD
         </div>
         <div class="weathermap">
-=======
+
 	<div class="col-md-6">
 		<h3 class="trek-description">K2</h3>
 		<ng-map zoom="11" center="35.8800523,76.375012,11">
@@ -117,12 +93,10 @@
 						image {{trek.badge}}
 					</div>
 				</div>
->>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
 
         </div>
     </div>
 
-<<<<<<< HEAD
 </div>
 </form>
 <div class="row"  >
@@ -143,7 +117,6 @@
 </div>
 </div>
 </body>
-=======
 		<div class="col-md-6">
 			<button type="submit" class="btn btn-default addbutton1" ng-click="update(trek)">Add to favorites</button>
 		</div>
@@ -208,8 +181,4 @@
 			</div>
 		</div>
 	</div>
-
-
-
 </div>
->>>>>>> 5289ac8d198d12564d898fd7160b3ca88e9321f0
